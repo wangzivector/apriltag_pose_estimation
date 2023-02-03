@@ -1,0 +1,49 @@
+%YAML:1.0
+image_width: 640
+image_height: 480
+# [usb_cam] for VideoCapture cap(0); [ros_topic] for ros image topic. 
+# Choose one of the following commands, remeber to modify coresponding camera info. below.
+camera_name: usb_cam
+# camera_name: /camera/color/image_raw
+
+# Tag family: tag36h11 or tag25h9
+tag_family: tag36h11
+
+# Tag edge length in meters
+tagsize: 0.056
+
+# [focal_x, focal_y, principle_x, principle_y]
+fx: 612.089535562815
+fy: 611.565955160049
+cx: 321.653547343394
+cy: 248.634043545730
+
+
+# camera_matrix: Input camera matrix A = [fx 0 cx; 0 fy cy; 0 0 1].
+camera_matrix: !!opencv-matrix
+  rows: 3
+  cols: 3
+  dt: d
+  data: [612.089535562815, 0, 321.653547343394, 0, 611.565955160049, 248.634043545730, 0, 0, 1]
+distortion_model: plumb_bob
+
+# distortion_coefficients: [k1,k2,p1,p2,k3,k4,k5,k6,s1,s2,s3,s4,taux,tauy] of 4, 5, 8, 12 or 14 elements.
+# Usually use [k1,k2,p1,p2,k3] , k_x is RadialDistortion, p_x is TangentialDistortion.
+distortion_coefficients: !!opencv-matrix
+  rows: 1
+  cols: 5
+  dt: d 
+  data: [0.127805734894953, 0.105135524113024, 0.00130414482047431, 0.00483039938043028, -1.06641279222883]
+
+# Scale of image 
+rectification_matrix: !!opencv-matrix
+  rows: 3
+  cols: 3
+  dt: d
+  data: [1, 0, 0, 0, 1, 0, 0, 0, 1]
+
+# projection_matrix: !!opencv-matrix
+#   rows: 3
+#   cols: 4
+#   dt : d
+#   data: [488.5268249511719, 0, 305.0990841060138, 0, 0, 489.0720520019531, 269.8452152812879, 0, 0, 0, 1, 0]

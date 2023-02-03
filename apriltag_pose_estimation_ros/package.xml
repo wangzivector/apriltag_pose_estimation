@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>apriltag_pose_estimation_ros</name>
+  <version>0.0.1</version>
+  <description>apriltags pose estimation using general camera</description>
+  <maintainer email="wangzi20086@gmail.com">Xianli Wang</maintainer>
+  <license>Apache 2.0</license>
+  <author email="wangzi20086@gmail.com">Xianli Wang</author>
+  <buildtool_depend>catkin</buildtool_depend>
+  <depend>image_transport</depend>
+  <depend>cv_bridge</depend>
+  <depend>roscpp</depend>
+  <depend>sensor_msgs</depend>
+  <depend>nav_msgs</depend>
+  <depend>std_msgs</depend>
+  <depend>geometry_msgs</depend>
+</package>
