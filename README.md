@@ -46,7 +46,7 @@ git clone https://github.com/wangzivector/apriltag_pose_estimation
 2. Check and modify the configuration file `camera_parameter.yaml`. Include the used `tag_family` type, `tagsize`, and `camera specifications` listed in the file (Obtain camera specifications see details in Maintenance). 
 
    - Modify ros image topic in `camera_parameter.yaml`, the image topic should publish RGB image for rosnode to subscribe: 
-      ```json
+      ```yaml
       camera_name: /camera/color/image_raw
       ```
     > (Of course, you need to publish the image yourself in advance. Otherwise (For those only have usb camera and use ROS), just plug the usb-cam and change the `camera_name` to `usb_cam`, like this: `camera_name: usb_cam`. It will work as the cmake version. And! it will help to publish tag-drawed images to topic `/apriltag/taged_image`, which you can view in Rviz).  
