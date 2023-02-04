@@ -21,7 +21,7 @@ extern "C" {
 #include "tag25h9.h"
 }
 
-#define FILENAME "/home/smart/catkin_ws/src/apriltag_pose_estimation_ros/camera_parameter.yaml"
+#define FILENAME "~/catkin_ws/src/apriltag_pose_estimation_ros/camera_parameter.yaml"
 
 const bool PUB_TAGED_IMAGE = true;
 bool image_receive_flag;

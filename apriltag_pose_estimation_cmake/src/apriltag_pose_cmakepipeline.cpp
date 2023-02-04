@@ -15,7 +15,7 @@ extern "C" {
 #include "tag25h9.h"
 }
 
-#define FILENAME "/home/smart/apriltag_pose_estimation_usbcam/camera_parameter.yaml"
+#define FILENAME "./../camera_parameter.yaml"
 
 bool DRAW_TAGED_IMAGE = true;
 cv::Mat DrawTagOnImage(cv::Mat image, apriltag_detection_t *det);
