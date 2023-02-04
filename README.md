@@ -14,7 +14,7 @@ Two folders are two **individal** versions, one for **ROS with image topic**, an
 
 ## Usage
 ### 1. Dependency
-   - Install <u>**Eigen3**</u> and <u>**OpenCV**</u> on Ubuntu:
+   - Install <u>**Eigen3**</u> and <u>**OpenCV**</u> on Ubuntu, if dont have:
 ```bash
 sudo apt install libeigen3-dev # eigen 3 
 sudo apt install libopencv-dev # opencv
@@ -22,15 +22,16 @@ sudo apt install libopencv-dev # opencv
 
    - Install Official <u>**Apriltag**</u> library:
 ```bash
-git clone https://github.com/AprilRobotics/apriltag  
-cd apriltag && cmake .  
-sudo make install  
+git clone https://github.com/AprilRobotics/apriltag
+cd apriltag && cmake .
+sudo make install
 ```
 
 ### 2. Complie code and Run
 
 - Clone this respository to your machine
 ```bash
+cd anywhere_you_wwant/
 git clone https://github.com/wangzivector/apriltag_pose_estimation
 ```
 ---
@@ -38,7 +39,7 @@ git clone https://github.com/wangzivector/apriltag_pose_estimation
 1. Copy the corresponding version folder to catkin space catkin make them, specifically:
 
    ```bash
-   cp -r apriltag_pose_estimation_ros/  ~/catkin_ws/src
+   cp -r apriltag_pose_estimation/apriltag_pose_estimation_ros/  ~/catkin_ws/src
    cd ~/catkin_ws 
    catkin_make # or catkin build
    ``` 
@@ -49,11 +50,11 @@ git clone https://github.com/wangzivector/apriltag_pose_estimation
       ```yaml
       camera_name: /camera/color/image_raw
       ```
-    > (Of course, you need to publish the image yourself in advance. Otherwise (For those only have usb camera and use ROS), just plug the usb-cam and change the `camera_name` to `usb_cam`, like this: `camera_name: usb_cam`. It will work as the cmake version. And! it will help to publish tag-drawed images to topic `/apriltag/taged_image`, which you can view in Rviz).  
+    > (Of course, you need to publish the image yourself in advance(In ROS, use rospack like `cv_camera`, `usb_cam` are good). Otherwise (For those only have usb camera and use ROS), just plug the usb-cam and change the `camera_name` to `usb_cam`, like this: `camera_name: usb_cam`. It will work as the cmake version. And! it will help to publish tag-drawed images to topic `/apriltag/taged_image`, which you can view in Rviz).  
 
-   - Modify the .yaml file directory in `apriltag_pose_rospipeline.cpp`, if needed, and re-catkin_make the package:
+   - Modify the following yaml file directory in `apriltag_pose_rospipeline.cpp`, if needed, and re-catkin_make the package:
       ```cpp
-      #define FILENAME "~/catkin_ws/src/apriltag_pose_estimation_ros/camera_parameter.yaml"
+      #define FILENAME "/home/smart/catkin_ws/src/apriltag_pose_estimation_ros/camera_parameter.yaml"
       ```
 
 3. Run the ros node: 
@@ -81,9 +82,8 @@ make
 
 > - Modify the following .yaml file directory in `apriltag_pose_cmakepipeline.cpp`, if needed, and re-make this project: <br/> `#define FILENAME "./../camera_parameter.yaml"`
 
-2. Plug the usb-cam and run the .exe:</br>
+2. Plug the usb-cam and run the .exe in `/build`:</br>
 ```bash
-cd apriltag_pose_estimation_cmake/build
 ./apriltag_pose
 ```
 It will show the tag_drawed_images in OpenCV window and output the Pose info. in terminal. For further use, go check the code.

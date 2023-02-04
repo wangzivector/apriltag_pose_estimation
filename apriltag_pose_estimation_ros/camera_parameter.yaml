@@ -3,8 +3,9 @@ image_width: 640
 image_height: 480
 # [usb_cam] for VideoCapture cap(0); [ros_topic] for ros image topic. 
 # Choose one of the following commands, remeber to modify coresponding camera info. below.
-camera_name: usb_cam
+# camera_name: usb_cam
 # camera_name: /camera/color/image_raw
+camera_name: /cv_camera/image_raw
 
 # Tag family: tag36h11 or tag25h9
 tag_family: tag36h11

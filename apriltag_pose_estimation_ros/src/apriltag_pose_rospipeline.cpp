@@ -21,7 +21,7 @@ extern "C" {
 #include "tag25h9.h"
 }
 
-#define FILENAME "~/catkin_ws/src/apriltag_pose_estimation_ros/camera_parameter.yaml"
+#define FILENAME "/home/smart/catkin_ws/src/apriltag_pose_estimation_ros/camera_parameter.yaml"
 
 const bool PUB_TAGED_IMAGE = true;
 bool image_receive_flag;
@@ -101,9 +101,9 @@ int main(int argc, char *argv[])
     bool USE_CAP_IMAGE = cap.isOpened() && (camera_name == "usb_cam");
     
     if (!USE_CAP_IMAGE) {
-        std::cout << "Failed to open usb camera." << std::endl;
+        std::cout << "Failed to open usb camera. Please Plug one or check ttyUSBCAM0" << std::endl;
         if (camera_name == "usb_cam") {
-            std::cout << "Specify ros image topic, now is:" << camera_name << std::endl;
+            std::cout << "OR to specify ros image topic, now is:" << camera_name << std::endl;
             return (-1);
         }
     }else std::cout << "Open VideoCapture cap(0) done." << std::endl;
