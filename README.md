@@ -2,6 +2,8 @@
 This repository contains two _individual_ implementations to estimate pose(6 DoFs) of Apriltags, using _ROS_ <u>or</u> _CMake_ .
 Two folders are two **individal** versions, one for **ROS with image topic**, another for **Cmake with OpenCV**. 
 
+<div align="center"><img alt="ROS AprilTag Demonsration" src="apriltag_demo.gif" width="600px"/></div>
+
 ## Feature
 1. Two versions for ROS wrapper or Cmake tool:
    - [apriltag_pose_estimation_ros](./apriltag_pose_estimation_ros): **ROS with image topic**, just simply specify the ros_image_topic inside .yaml file in ROS version, to get apriltag pose.
